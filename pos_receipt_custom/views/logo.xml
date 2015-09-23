@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <openerp>
+    <data>
+        <!-- Adding logo field to existing view -->
+        <record model="ir.ui.view" id="logo_to_receipt_form_view">
+            <field name="name">pos.config.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Receipt']" position="inside">
+                        <group>
+                            <field name="receipt_use_logo"/>
+                        </group>
+                        <group>
+                            <field name="logo" class="oe_avatar" widget='image'/>
+                        </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+ </openerp>

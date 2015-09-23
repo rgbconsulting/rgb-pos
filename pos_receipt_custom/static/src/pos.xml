@@ -1,0 +1,45 @@
+<templates id="template" xml:space="preserve">
+    <t t-extend="PosTicket">
+        <!-- Add logo -->
+        <t t-jquery="div.pos-sale-ticket" t-operation="prepend">
+            <div t-if="widget.pos.config.receipt_use_logo">
+                <t t-if="widget.pos.config.logo">
+                    <div style='text-align:center'>
+                        <img  height="50" t-att-src="'data:image/png;base64,'+ widget.pos.config.logo" />
+                    </div>
+                </t>
+                <t t-if="!widget.pos.config.logo" >
+                    <div style='text-align:center'>
+                        <img height="50" src="/web/binary/company_logo" />
+                    </div>
+                </t>
+                <br />
+            </div>
+        </t>
+
+        <!-- Add hr before company info -->
+        <t t-jquery="t[t-esc='widget.pos.company.name']" t-operation="before">
+        <hr />
+        </t>
+
+        <!-- Add Customer info -->
+        <t t-jquery="t[t-esc='widget.pos.shop.name']" t-operation="after">
+            <t t-if="order.get_client()">
+                <br />
+                <hr />
+                <t t-esc="order.get_client().name"/>
+                <br />
+                Address:
+                <t t-esc="order.get_client().street ? order.get_client().street + ',' : '' "/>
+                <t t-esc="order.get_client().city ? order.get_client().city + ',' : ''"/>
+                <t t-esc="order.get_client().state_id ? order.get_client().state_id[1] + ',' : ''"/>
+                <t t-esc="order.get_client().country_id ? order.get_client().country_id[1] : ''"/>
+                <br />
+                <t t-if="order.get_client().vat">
+                    VAT: <t t-esc="order.get_client().vat"/>
+                </t>
+                <hr />
+            </t>
+        </t>
+    </t>
+</templates>
