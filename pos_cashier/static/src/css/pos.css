@@ -1,0 +1,28 @@
+.pos .popup.popup-selection .title {
+    margin-top: 0;
+}
+.pos .popup.popup-selection .selection {
+    overflow-y: auto;
+    max-height: 305px;
+    font-size: 16px;
+    margin: 0 -10px;
+    width: auto;
+    line-height: 50px;
+    border-top: dashed 1px rgb(215,215,215);
+}
+.pos .popup.popup-selection .selection-item {
+    width: auto;
+    background: rgb(230,230,230);
+    cursor: pointer;
+    text-align: left;
+    padding: 0px 16px;
+}
+.pos .popup.popup-selection .selection-item:nth-child(even) {
+    background: rgb(247,247,247);
+}
+
+.pos .scrollable-y{
+    overflow: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}

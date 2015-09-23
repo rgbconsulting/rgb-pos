@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <openerp>
+    <data>
+        <record model="ir.ui.view" id="cashier_pos_config_form">
+            <field name="name">pos.cashier.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Barcode Types']" position="before">
+                    <group string="Cashiers">
+                        <field name="cashier_list" nolabel="1" widget="many2many" domain="[('groups_id', 'in', %(point_of_sale.group_pos_user)d)]">
+                            <tree string="Cashiers">
+                                <field name="pos_cashier"/>
+                                <field name="name"/>
+                                <field name="login"/>
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
