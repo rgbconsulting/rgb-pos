@@ -1,0 +1,10 @@
+<openerp>
+    <data>
+        <!-- Add JS file -->
+        <template id="assets_backend" name="point_of_sale assets2" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_product_pack/static/src/js/pos.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

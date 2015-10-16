@@ -1,0 +1,14 @@
+.pos .popup.popup-selection .title {
+    margin-top: 0;
+    margin-left: 25px;
+}
+
+.pos .popup.popup-selection .selection {
+    position:relative;
+    width: 495px;
+    height: 325px;
+    border: 1px solid #e2e2e2;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}

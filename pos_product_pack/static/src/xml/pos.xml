@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template>
+    <t t-name="ProductPackPopup">
+        <div class="modal-dialog">
+            <div class="popup popup-selection">
+                <span class="title">Pack:<span id="pack-name"/></span>
+                <span class="title">Group:<span id="group-name"/></span>
+                <div class="selection scrollable-y touch-scrollable">
+                    <span class="placeholder-ProductListWidget" />
+                </div>
+                <div class="footer">
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</template>
