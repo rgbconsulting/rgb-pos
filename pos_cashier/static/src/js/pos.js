@@ -33,9 +33,9 @@ Extend: point_of_sale.UsernameWidget
             this.select_user().then(function(user) {
 
                 /* set cashier */
-                if ( user && user != self.pos.user ) {
-                    self.pos.user = user;
-                    self.renderElement();
+                if ( user && user != self.pos.cashier ) {
+                    self.pos.cashier = user;
+                    self.refresh();
                 }
             });
         },
