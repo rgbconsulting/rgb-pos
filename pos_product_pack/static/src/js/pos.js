@@ -238,17 +238,17 @@ Overload : point_of_sale.Orderline
                         return o_lines.push(item);
                     }, this));
 
-                    for(var i = 0,  len = o_lines.length; i < len; i++){
+                    for(var i = 0, len = o_lines.length; i < len; i++){
                         if (o_lines[i].get_product().pack_code == product.pack_code){
                             this.order.removeOrderline(o_lines[i]);
                         }
                     }
-
+                } else {
+                    return OrderlineSuper.prototype.set_quantity.call(this, quantity);
                 }
-                return OrderlineSuper.prototype.set_quantity.call(this, quantity);
-            }else{
+            } else {
                 // Deny changing quantity of pack or pack item
-                if(!product.pack_code){
+                if(quantity == 1 || !product.pack_code){
                     return OrderlineSuper.prototype.set_quantity.call(this, quantity);
                 }
             }
