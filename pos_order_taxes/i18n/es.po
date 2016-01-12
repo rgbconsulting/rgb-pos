@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_order_taxes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-12 07:23+0000\n"
+"PO-Revision-Date: 2016-01-12 07:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,amount:0
+msgid "Amount"
+msgstr "Cuota"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,base:0
+msgid "Base"
+msgstr "Base imponible"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: pos_order_taxes
+#: help:pos.config,display_price_with_taxes:0
+msgid "Display Prices with taxes on POS"
+msgstr "Mostrar los precios con impuestos incluidos en el TPV"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: pos_order_taxes
+#: model:ir.model,name:pos_order_taxes.model_pos_order_line
+msgid "Lines of Point of Sale"
+msgstr "Líneas del Terminal Punto de Venta"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,pos_order:0
+msgid "POS Order"
+msgstr "Pedido"
+
+#. module: pos_order_taxes
+#: view:pos.order:pos_order_taxes.view_pos_pos_form
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: pos_order_taxes
+#: model:ir.model,name:pos_order_taxes.model_pos_order
+msgid "Point of Sale"
+msgstr "Terminal Punto de Venta"
+
+#. module: pos_order_taxes
+#: field:pos.config,display_price_with_taxes:0
+msgid "Price With Taxes"
+msgstr "Precios con impuestos incluidos"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,tax:0
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: pos_order_taxes
+#: field:pos.order.tax,name:0
+msgid "Tax Description"
+msgstr "Descripción del impuesto"
+
+#. module: pos_order_taxes
+#: view:pos.order:pos_order_taxes.view_pos_pos_form
+#: field:pos.order,taxes:0
+#: field:pos.order.line,tax_ids:0
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: pos_order_taxes
+#: view:pos.order:pos_order_taxes.view_pos_pos_form
+msgid "Taxes detail"
+msgstr "Detalle de impuestos"
