@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Add Mettler configuration -->
+        <record id="pos_scale_config_1" model="pos.scale.config">
+            <field name="name">Scale Mettler</field>
+            <field name="driver">mettler</field>
+        </record>
+
+        <!-- Add Dibal ICL/PCEAN configuration -->
+        <record id="pos_scale_config_2" model="pos.scale.config">
+            <field name="name">Scale Dibal ICL/PCEAN</field>
+            <field name="driver">dibal</field>
+        </record>
+
+        <record id="pos_scale_config_params_1" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">baudrate</field>
+            <field name="value">9600</field>
+        </record>
+
+        <record id="pos_scale_config_params_2" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">bytesize</field>
+            <field name="value">8</field>
+        </record>
+
+        <record id="pos_scale_config_params_3" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">stopbits</field>
+            <field name="value">1</field>
+        </record>
+
+        <record id="pos_scale_config_params_4" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">parity</field>
+            <field name="value">E</field>
+        </record>
+
+        <record id="pos_scale_config_params_5" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">timeout</field>
+            <field name="value">20</field>
+        </record>
+
+        <record id="pos_scale_config_params_6" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">read_weight</field>
+            <field name="value">5</field>
+        </record>
+
+        <record id="pos_scale_config_params_7" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">weight_start_integer</field>
+            <field name="value">8</field>
+        </record>
+
+        <record id="pos_scale_config_params_8" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">weight_integer</field>
+            <field name="value">2</field>
+        </record>
+
+        <record id="pos_scale_config_params_9" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">weight_start_decimal</field>
+            <field name="value">10</field>
+        </record>
+
+        <record id="pos_scale_config_params_10" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">weight_decimal</field>
+            <field name="value">3</field>
+        </record>
+
+        <record id="pos_scale_config_params_11" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_2"/>
+            <field name="name">device_path</field>
+            <field name="value">/dev/ttyUSB0</field>
+        </record>
+
+        <!-- Add Dibal DELTA configuration -->
+        <record id="pos_scale_config_3" model="pos.scale.config">
+            <field name="name">Scale Dibal DELTA</field>
+            <field name="driver">dibal</field>
+        </record>
+
+        <record id="pos_scale_config_params_12" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">baudrate</field>
+            <field name="value">9600</field>
+        </record>
+
+        <record id="pos_scale_config_params_13" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">bytesize</field>
+            <field name="value">8</field>
+        </record>
+
+        <record id="pos_scale_config_params_14" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">stopbits</field>
+            <field name="value">1</field>
+        </record>
+
+        <record id="pos_scale_config_params_15" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">parity</field>
+            <field name="value">E</field>
+        </record>
+
+        <record id="pos_scale_config_params_16" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">timeout</field>
+            <field name="value">200</field>
+        </record>
+
+        <record id="pos_scale_config_params_17" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">read_weight</field>
+            <field name="value">68,13,10</field>
+        </record>
+
+        <record id="pos_scale_config_params_18" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">weight_start_integer</field>
+            <field name="value">1</field>
+        </record>
+
+        <record id="pos_scale_config_params_19" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">weight_integer</field>
+            <field name="value">3</field>
+        </record>
+
+        <record id="pos_scale_config_params_20" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">weight_start_decimal</field>
+            <field name="value">5</field>
+        </record>
+
+        <record id="pos_scale_config_params_21" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">weight_decimal</field>
+            <field name="value">3</field>
+        </record>
+
+        <record id="pos_scale_config_params_22" model="pos.scale.config.params">
+            <field name="scale_config_id" ref="pos_scale_config_3"/>
+            <field name="name">device_path</field>
+            <field name="value">/dev/ttyUSB0</field>
+        </record>
+
+    </data>
+</openerp>
