@@ -21,9 +21,9 @@ License
 Author
 ------
 
-* [RGB Consulting SL] (www.rgbconsulting.com)
+* Copyright, RGB Consulting SL (www.rgbconsulting.com)
 
 Contributors
 ------------
 
-* RGB Consulting SL <odoo@rgbconsulting.com>
+* RGB Consulting SL <info@rgbconsulting.com>
