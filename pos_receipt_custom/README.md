@@ -16,17 +16,14 @@ Credits
 License
 -------
 
-* GNU Affero General Public License
-    http://www.gnu.org/licenses/agpl.html
+* [GNU Affero General Public License] (http://www.gnu.org/licenses/agpl.html)
 
 Author
 ------
 
-* Copyright, RGB Consulting SL 
-    <info@rgbconsulting.com>
+* Copyright, RGB Consulting SL (www.rgbconsulting.com)
 
 Contributors
 ------------
 
-* RGB Consulting SL
-    www.rgbconsulting.com
+* RGB Consulting SL <info@rgbconsulting.com>

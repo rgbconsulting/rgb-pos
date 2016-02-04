@@ -21,10 +21,10 @@ License
 Author
 ------
 
-* Copyright, RGB Consulting SL (info@rgbconsulting.com)
+* Copyright, RGB Consulting SL (www.rgbconsulting.com)
 
 Contributors
 ------------
 
 * RGB Consulting SL <info@rgbconsulting.com>
-* Based on Ivan Yelizariev's module [tg_pos_packs](https://github.com/yelizariev/pos-addons/tree/8.0/tg_pos_packs)
+* Based on Ivan Yelizariev's module [tg_pos_packs] (https://github.com/yelizariev/pos-addons/tree/8.0/tg_pos_packs)
