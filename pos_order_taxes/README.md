@@ -26,5 +26,5 @@ Author
 Contributors
 ------------
 
-* RGB Consulting SL <info@rgbconsulting.com>
+* RGB Consulting SL <odoo@rgbconsulting.com>
 * Based on OCA's module [pos_pricelist] (https://github.com/OCA/pos/tree/8.0/pos_pricelist)

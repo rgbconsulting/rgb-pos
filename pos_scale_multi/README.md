@@ -27,4 +27,4 @@ Author
 Contributors
 ------------
 
-* RGB Consulting SL <info@rgbconsulting.com>
+* RGB Consulting SL <odoo@rgbconsulting.com>

@@ -26,5 +26,5 @@ Author
 Contributors
 ------------
 
-* RGB Consulting SL <info@rgbconsulting.com>
+* RGB Consulting SL <odoo@rgbconsulting.com>
 * Based on Ivan Yelizariev's module [tg_pos_packs] (https://github.com/yelizariev/pos-addons/tree/8.0/tg_pos_packs)
