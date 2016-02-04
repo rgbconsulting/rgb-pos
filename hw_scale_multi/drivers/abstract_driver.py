@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# See README file for full copyright and licensing details.
 
 import time
 from threading import Thread, Lock
@@ -30,9 +32,9 @@ class AbstractDriver(Thread):
                 self.status['messages'].append(message)
 
                 if status == 'error' and message:
-                    _logger.error('Scale Error: '+message)
+                    _logger.error('Scale Error: ' + message)
                 elif status == 'disconnected' and message:
-                    _logger.warning('Disconnected Scale: '+message)
+                    _logger.warning('Disconnected Scale: ' + message)
         else:
             self.status['status'] = status
             if message:
@@ -41,9 +43,9 @@ class AbstractDriver(Thread):
                 self.status['messages'] = []
 
             if status == 'error' and message:
-                _logger.error('Scale Error: '+message)
+                _logger.error('Scale Error: ' + message)
             elif status == 'disconnected' and message:
-                _logger.warning('Disconnected Scale: '+message)
+                _logger.warning('Disconnected Scale: ' + message)
 
     def get_device(self):
         pass

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# See README file for full copyright and licensing details.
+
 import time
 import os
 import serial
@@ -21,14 +24,14 @@ class MettlerDriver(AbstractDriver):
                 self.set_status('disconnected', 'Scale Not Found')
                 return None
 
-            self.set_status('connected', 'Connected to '+self.device_path)
+            self.set_status('connected', 'Connected to ' + self.device_path)
             return serial.Serial(self.device_path,
-                        baudrate = self.baudrate,
-                        bytesize = self.bytesize,
-                        stopbits = self.stopbits,
-                        parity   = self.parity,
-                        timeout  = self.timeout,
-                        writeTimeout= self.timeout)
+                                 baudrate=self.baudrate,
+                                 bytesize=self.bytesize,
+                                 stopbits=self.stopbits,
+                                 parity=self.parity,
+                                 timeout=self.timeout,
+                                 writeTimeout=self.timeout)
 
         except Exception as e:
             self.set_status('error', str(e))
@@ -50,12 +53,12 @@ class MettlerDriver(AbstractDriver):
                             answer.append(char)
 
                     if '?' in answer:
-                        stat = ord(answer[answer.index('?')+1])
+                        stat = ord(answer[answer.index('?') + 1])
                         if stat == 0:
                             self.weight_info = 'ok'
                         else:
                             self.weight_info = []
-                            if stat & 1 :
+                            if stat & 1:
                                 self.weight_info.append('moving')
                             if stat & 1 << 1:
                                 self.weight_info.append('over_capacity')
@@ -75,9 +78,9 @@ class MettlerDriver(AbstractDriver):
                         try:
                             self.weight = float(''.join(answer))
                         except ValueError as v:
-                            self.set_status('error','No data Received, please power-cycle the scale');
+                            self.set_status('error', 'No data Received, please power-cycle the scale');
                             self.device = None
 
                 except Exception as e:
-                    self.set_status('error',str(e))
+                    self.set_status('error', str(e))
                     self.device = None

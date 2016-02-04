@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# See README file for full copyright and licensing details.
 
 import time
 import os
@@ -28,14 +30,14 @@ class DibalDriver(AbstractDriver):
                 self.set_status('disconnected', 'Scale Not Found')
                 return None
 
-            self.set_status('connected', 'Connected to '+self.device_path)
+            self.set_status('connected', 'Connected to ' + self.device_path)
             return serial.Serial(self.device_path,
-                        baudrate = self.baudrate,
-                        bytesize = self.bytesize,
-                        stopbits = self.stopbits,
-                        parity   = self.parity,
-                        timeout  = self.timeout,
-                        writeTimeout= self.timeout)
+                                 baudrate=self.baudrate,
+                                 bytesize=self.bytesize,
+                                 stopbits=self.stopbits,
+                                 parity=self.parity,
+                                 timeout=self.timeout,
+                                 writeTimeout=self.timeout)
 
         except Exception as e:
             self.set_status('error', str(e))
@@ -47,8 +49,8 @@ class DibalDriver(AbstractDriver):
                 try:
                     self.device.write(self.weight_string)
                     time.sleep(0.2)
-
                     answer = []
+
                     while True:
                         char = self.device.read(1)
                         if not char:
@@ -58,19 +60,18 @@ class DibalDriver(AbstractDriver):
 
                     if answer:
                         integer_weight = ''.join(answer[self.weight_start_integer:
-                                                    (self.weight_start_integer + self.weight_integer)]).replace(' ','')
+                        (self.weight_start_integer + self.weight_integer)]).replace(' ', '')
                         decimal_weight = ''.join(answer[self.weight_start_decimal:
-                                                    (self.weight_start_decimal + self.weight_decimal)]).replace(' ','')
-                        self.weight = self.convert_float(integer_weight + '.' + decimal_weight)
+                        (self.weight_start_decimal + self.weight_decimal)]).replace(' ', '')
+                        try:
+                            self.weight = self.convert_float(integer_weight + '.' + decimal_weight)
+                        except ValueError:
+                            self.weight = 0
                     else:
+                        self.weight = 0
                         self.set_status('error', 'No data Received, please power-cycle the scale')
 
                 except Exception as e:
                     self.set_status('error', str(e))
+                    self.weight = 0
                     self.device = None
-
-    def convert_float(self, weight):
-        try:
-            return float(weight)
-        except ValueError:
-            return 0
