@@ -64,7 +64,7 @@ class DibalDriver(AbstractDriver):
                         decimal_weight = ''.join(answer[self.weight_start_decimal:
                         (self.weight_start_decimal + self.weight_decimal)]).replace(' ', '')
                         try:
-                            self.weight = self.convert_float(integer_weight + '.' + decimal_weight)
+                            self.weight = float(integer_weight + '.' + decimal_weight)
                         except ValueError:
                             self.weight = 0
                     else:
