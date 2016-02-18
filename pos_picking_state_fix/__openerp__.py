@@ -28,8 +28,8 @@
     'category': 'POS',
     'summary': """Fixing POS picking state""",
     'description': """
-MRP Label Printer
-=================
+POS Picking State Fix
+=====================
 This module fixes the pickings created from a POS order, passing the pickings
 to *Waiting Availability* if the state is not *Transfered*.
     """,
