@@ -14,12 +14,14 @@ class PosPicking(models.Model):
         try:
             super(PosPicking, self).create_picking()
         except:
-            if self.picking_id.state != 'done':
-                for move in self.picking_id.move_lines:
-                    if move.quant_ids:
-                        # We pass this move to done because the quants were already moved
-                        move.write({'state': 'done', 'date': time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)})
-                    else:
-                        # If there are no moved quants we pass the move to Waiting Availability
-                        move.do_unreserve()
+            pass
+
+        if self.picking_id.state != 'done':
+            for move in self.picking_id.move_lines:
+                if move.quant_ids:
+                    # We pass this move to done because the quants were already moved
+                    move.write({'state': 'done', 'date': time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)})
+                else:
+                    # If there are no moved quants we pass the move to Waiting Availability
+                    move.do_unreserve()
         return True
