@@ -23,7 +23,9 @@ class SerialDriver:
                     data = ser.readline()
                     result['data'] = data
                 else:
-                    ser.write(params.get('data', ''))
+                    data = params.get('data', '')
+                    data = data.decode('unicode_escape')
+                    ser.write(data)
                 result['status'] = 'ok'
             except serial.SerialException, message:
                 result['status'] = 'error'
@@ -42,9 +44,9 @@ class SerialDriver:
                 _logger.error('Serial port not found')
                 return None
             return serial.Serial(port,
-                                 baudrate=params.get('baudrate', 9600),
-                                 bytesize=params.get('bytesize', 8),
-                                 stopbits=params.get('stopbits', 1),
+                                 baudrate=int(params.get('baudrate', 9600)),
+                                 bytesize=int(params.get('bytesize', 8)),
+                                 stopbits=int(params.get('stopbits', 1)),
                                  parity=params.get('parity', 'E'),
                                  timeout=float(params.get('timeout', 20)) / 1000,
                                  writeTimeout=float(params.get('timeout', 20)) / 1000)
