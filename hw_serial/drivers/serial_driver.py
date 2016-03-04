@@ -13,7 +13,7 @@ except ImportError:
     serial = None
 
 
-class SerialDriver:
+class SerialDriver(object):
     def serial_do_operation(self, operation, params):
         result = {}
         ser = self.serial_open(params)
@@ -24,17 +24,19 @@ class SerialDriver:
                     result['data'] = data
                 else:
                     data = params.get('data', '')
-                    data = data.decode('unicode_escape')
+                    encoding = params.get('encoding', None)
+                    if encoding:
+                        data = data.decode(encoding)
                     ser.write(data)
                 result['status'] = 'ok'
             except serial.SerialException, message:
                 result['status'] = 'error'
                 result['message'] = str(message)
+            finally:
+                ser.close()
         else:
             result['status'] = 'error'
             result['message'] = 'The serial port was not found!'
-        if ser:
-            ser.close()
         return result
 
     def serial_open(self, params):
