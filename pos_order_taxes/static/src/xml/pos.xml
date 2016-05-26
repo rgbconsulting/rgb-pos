@@ -27,4 +27,34 @@
             </div>
         </t>
     </t>
+    <!-- Add unit price with tax included in the ticket if prices with tax included in POS -->
+    <t t-extend="XmlReceipt">
+        <t t-jquery="line[indent='1']:eq(1)" t-operation="replace">
+             <line indent='1'>
+                 <t t-set='taxincl' t-value='Math.abs(receipt.subtotal - receipt.total_with_tax) &lt;= 0.000001' />
+                 <left>
+                     <value value-decimals='3' value-autoint='on'>
+                         <t t-esc='line.quantity' />
+                     </value>
+                     <t t-if='line.unit_name !== "Unit(s)"'>
+                         <t t-esc='line.unit_name' />
+                     </t>
+                     x
+                     <t t-if='!taxincl'>
+                         <value>
+                             <t t-esc='line.price' />
+                         </value>
+                     </t>
+                     <t t-if='taxincl'>
+                         <value>
+                             <t t-esc='line.product_price_with_tax' />
+                         </value>
+                     </t>
+                 </left>
+                <right>
+                    <value><t t-esc='line.price_display' /></value>
+                </right>
+            </line>
+        </t>
+    </t>
 </templates>

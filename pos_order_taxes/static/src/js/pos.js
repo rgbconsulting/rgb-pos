@@ -24,6 +24,12 @@ Extend: point_of_sale.Orderline
             return this.get_base_price();
         },
 
+        export_for_printing: function(){
+            var res = OrderlineSuper.prototype.export_for_printing.apply(this, arguments);
+            res["product_price_with_tax"] = this.get_product().price_with_taxes
+            return res;
+        },
+
         export_as_JSON: function() {
             var res = OrderlineSuper.prototype.export_as_JSON.apply(this, arguments);
             var product_tax_ids = this.get_product().taxes_id || [];

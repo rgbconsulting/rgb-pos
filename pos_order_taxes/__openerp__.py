@@ -34,6 +34,7 @@ Include taxes in the POS order
 ==============================
 * Include taxes into the POS order
 * Add option in the POS config to include taxes in prices
+* Modify Pos ticket to show prices with tax included when option is checked
     """,
 
     'data': [

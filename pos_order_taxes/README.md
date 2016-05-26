@@ -8,6 +8,7 @@ Features
 
 * Include taxes into the POS order
 * Add option in the POS configuration to include taxes in the product price
+* Show price with taxes in the POS receipt if the tax included option is checked
 
 
 Credits
