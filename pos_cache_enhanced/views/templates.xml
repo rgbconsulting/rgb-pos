@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="point_of_sale poscache" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_cache_enhanced/static/src/lib/pako.js"></script>
+                <script type="text/javascript" src="/pos_cache_enhanced/static/src/js/pos_cache.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

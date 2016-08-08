@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_cache_enhanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-08 07:17+0000\n"
+"PO-Revision-Date: 2016-08-08 07:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,cache:0
+msgid "Cache"
+msgstr "Caché"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,compute_user_id:0
+msgid "Cache compute user"
+msgstr "Usuario caché"
+
+#. module: pos_cache_enhanced
+#: field:pos.config,cache_ids:0
+msgid "Cache ids"
+msgstr "Cache ids"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,config_id:0
+msgid "Config id"
+msgstr "Config id"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,display_name:0
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,write_uid:0
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,write_date:0
+msgid "Last Updated on"
+msgstr "Última modificación el"
+
+#. module: pos_cache_enhanced
+#. openerp-web
+#: code:addons/pos_cache_enhanced/static/src/js/pos_cache.js:49
+#, python-format
+msgid "Loading products"
+msgstr "Cargando productos"
+
+#. module: pos_cache_enhanced
+#: field:pos.config,oldest_cache_time:0
+msgid "Oldest cache time"
+msgstr "Caché más antigua"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,product_domain:0
+msgid "Product domain"
+msgstr "Dominio de productos"
+
+#. module: pos_cache_enhanced
+#: field:pos.cache,product_fields:0
+msgid "Product fields"
+msgstr "Campos de productos"
+
+#. module: pos_cache_enhanced
+#: view:pos.config:pos_cache_enhanced.view_pos_config_cache_form
+msgid "Recompute cache"
+msgstr "Recalcular caché"
+
