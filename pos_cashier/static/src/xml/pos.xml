@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
+    <!-- Pin popup widget -->
+    <t t-name="PinPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-password">
+                <p class="title"><t t-esc="widget.title"/></p>
+                <div class='popup-input value active'>
+                    <t t-esc='widget.inputbuffer' />
+                </div>
+                <div class='popup-numpad'>
+                    <button class="input-button number-char" data-action='1'>1</button>
+                    <button class="input-button number-char" data-action='2'>2</button>
+                    <button class="input-button number-char" data-action='3'>3</button>
+                    <br />
+                    <button class="input-button number-char" data-action='4'>4</button>
+                    <button class="input-button number-char" data-action='5'>5</button>
+                    <button class="input-button number-char" data-action='6'>6</button>
+                    <br />
+                    <button class="input-button number-char" data-action='7'>7</button>
+                    <button class="input-button number-char" data-action='8'>8</button>
+                    <button class="input-button number-char" data-action='9'>9</button>
+                    <br />
+                    <button class="input-button numpad-char" data-action='CLEAR' >C</button>
+                    <button class="input-button number-char" data-action='0'>0</button>
+                    <button class="input-button numpad-backspace" data-action='BACKSPACE' >
+                        <img style="pointer-events: none;" src="/pos_cashier/static/src/img/backspace.png" width="24" height="21" />
+                    </button>
+                    <br />
+                </div>
+                <div class="footer centered">
+                    <div class="button confirm">
+                        Confirm
+                    </div>
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- Cashier selection widget -->
     <t t-name="SelectionCashierWidget">
         <div class="modal-dialog">
             <div class="popup popup-selection">
-                <p class="title"><t t-esc=" widget.title || 'Select' " /></p>
+                <p class="title"><t t-esc="widget.title"/></p>
                 <div class='selection scrollable-y touch-scrollable'>
                     <t t-foreach="widget.list || []" t-as="item">
                         <div class='selection-item' t-att-data-item-index='item_index'>

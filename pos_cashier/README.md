@@ -1,5 +1,5 @@
 RGB POS Cashier
-======================
+===============
 
 Adding cashier to POS.
 
@@ -8,6 +8,7 @@ Features
 
 * Add cashiers to POS configuration
 * Switch between cashiers from the POS interface
+* Assign security PIN for each cashier
 
 
 Credits

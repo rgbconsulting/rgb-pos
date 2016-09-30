@@ -1,6 +1,7 @@
 .pos .popup.popup-selection .title {
     margin-top: 0;
 }
+
 .pos .popup.popup-selection .selection {
     overflow-y: auto;
     max-height: 305px;
@@ -10,6 +11,7 @@
     line-height: 50px;
     border-top: dashed 1px rgb(215,215,215);
 }
+
 .pos .popup.popup-selection .selection-item {
     width: auto;
     background: rgb(230,230,230);
@@ -17,6 +19,7 @@
     text-align: left;
     padding: 0px 16px;
 }
+
 .pos .popup.popup-selection .selection-item:nth-child(even) {
     background: rgb(247,247,247);
 }
@@ -25,4 +28,76 @@
     overflow: hidden !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
+}
+
+.pos .popup input,
+.pos .popup-input {
+    text-align: left;
+    display: inline-block;
+    overflow: hidden;
+    background: white;
+    min-height: 44px;
+    font-family: "Lato";
+    font-size: 20px;
+    color: #444;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0px 0px 0px 1px rgb(220,220,220) inset;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.pos .popup-input.active {
+    outline: none;
+    box-shadow: 0px 0px 0px 3px #6EC89B;
+}
+
+.pos .popup-numpad {
+    margin: 12px auto;
+    text-align: center;
+    width: 254px;
+}
+
+.pos .popup-numpad .input-button,
+.pos .popup-numpad .mode-button {
+    background: none;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 25px;
+    margin: 4px;
+    vertical-align: top;
+    color: #444;
+}
+
+.pos .popup.popup-password {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 450px;
+    width: 254px;
+}
+
+.pos .popup-password .popup-numpad {
+    width: 190px;
+    text-align: left;
+}
+
+.pos .popup-password .popup-input {
+    width: 70%;
+    -webkit-text-security: disc;
+ }
+
+.pos .footer.centered {
+    text-align: center;
+}
+
+.pos .footer.centered .button {
+    float: none;
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
 }

@@ -30,19 +30,17 @@
     'summary': 'Implement cashier in POS',
 
     'description': """
-Cashier in pos
-==============
+Cashiers in POS
+===============
 * Add cashiers in the POS configuration
 * Allow switching between cashiers from the POS interface
+* Assign security PIN per cashier
     """,
 
     'data': [
-        'data.xml',
-        'views/cashier.xml',
-    ],
-
-    'demo': [
-
+        'views/pos_config_view.xml',
+        'views/res_users_view.xml',
+        'views/templates.xml',
     ],
 
     'qweb': [
