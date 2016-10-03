@@ -1,2 +1,2 @@
-# rgb-addons
-RGB Consulting addons for Odoo
+# rgb-pos
+RGB Consulting addons for Odoo POS
