@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template>
+    <!-- Notes Pop Up Widget -->
+    <t t-name="NotesPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup">
+                <div>
+                    <h4 class="modal-title">Add Note</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea rows="8" cols="28" maxlength="200" style="resize: none;font-size: 20pt;" id="note_text"/>
+                </div>
+                <div class="footer">
+                    <div class="button cancel" id="notes-popup-cancel">
+                        Cancel
+                    </div>
+                    <div class="button confirm"
+                         style="float: left;margin-left: 10px;background-color: #7f82ac;color:#eaebf2"
+                         id="notes-popup-confirm">
+                        Confirm
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- Add Notes to Orderlines -->
+    <t t-extend="Orderline">
+        <t t-jquery="ul.info-list" t-operation="append">
+            <t t-if="line.selected">
+                <li class="info" id="line_note" onmouseover="this.style.cursor='pointer'"
+                    onmouseout="this.style.cursor=''">
+                    <t t-if="line.get_note()">
+                        <i class='fa fa-tag'/>
+                        <t t-esc="line.get_note()"/>
+                    </t>
+                    <t t-if="!line.get_note()">
+                        <i class='fa fa-tag'/>
+                        <span>Add a note</span>
+                    </t>
+                </li>
+            </t>
+            <t t-if="!line.selected and line.note">
+                <li class="info">
+                    <i class='fa fa-tag'/>
+                    <t t-esc="line.get_note()"/>
+                </li>
+            </t>
+        </t>
+    </t>
+
+    <!-- Add notes in ticket -->
+    <t t-extend="PosTicket">
+        <!-- Add note after product name -->
+        <t t-jquery="t[t-esc='orderline.get_product().display_name']" t-operation="after">
+            <t t-if="orderline.get_note()">
+                <div>
+                    <t t-esc="orderline.get_note()"/>
+                </div>
+            </t>
+        </t>
+    </t>
+
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_receipt" inherit_id="point_of_sale.report_receipt" name="Notes report receipt">
+            <xpath expr="//span[@t-field='line.product_id']" position="after">
+                <div t-field="line.line_note"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>
