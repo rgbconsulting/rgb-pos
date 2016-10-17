@@ -24,6 +24,13 @@ Extend: point_of_sale.Orderline
             return this.get_base_price();
         },
 
+        get_display_unit_price: function(){
+            if (this.pos.config.display_price_with_taxes) {
+                return round_di(this.get_price_with_tax() / this.get_quantity(), this.pos.dp['Product Price']);
+            }
+            return round_di(this.price || 0, this.pos.dp['Product Price'])
+        },
+
         export_for_printing: function(){
             var res = OrderlineSuper.prototype.export_for_printing.apply(this, arguments);
             res["product_price_with_tax"] = this.get_product().price_with_taxes
