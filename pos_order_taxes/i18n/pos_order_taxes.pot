@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_order_taxes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-28 11:21+0000\n"
+"PO-Revision-Date: 2016-09-28 11:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_amount
+msgid "Amount"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_base
+msgid "Base"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_id
+msgid "ID"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_pos_order
+msgid "POS Order"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model,name:pos_order_taxes.model_pos_order
+msgid "Point of Sale"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_tax
+msgid "Tax"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_tax_name
+msgid "Tax Description"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model.fields,field_description:pos_order_taxes.field_pos_order_taxes
+#: model:ir.ui.view,arch_db:pos_order_taxes.view_pos_pos_form
+msgid "Taxes"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.ui.view,arch_db:pos_order_taxes.view_pos_pos_form
+msgid "Taxes detail"
+msgstr ""
+
+#. module: pos_order_taxes
+#: model:ir.model,name:pos_order_taxes.model_pos_order_tax
+msgid "pos.order.tax"
+msgstr ""
+
