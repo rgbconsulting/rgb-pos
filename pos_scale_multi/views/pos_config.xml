@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Adding scale config field to existing pos.config view -->
+    <record model="ir.ui.view" id="pos_config_scale_multi_form">
+        <field name="name">pos.config.scale.form.view</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='iface_electronic_scale']" position="after">
+                <field name="iface_scale_config" attrs="{'invisible':[('iface_electronic_scale', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
