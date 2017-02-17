@@ -35,6 +35,7 @@ This module is designed to be installed on the *main Odoo server*. On the *PosBo
     """,
 
     'data': [
+        'security/ir.model.access.csv',
         'views/pos_config.xml',
         'views/scale_config.xml',
         'views/js.xml',

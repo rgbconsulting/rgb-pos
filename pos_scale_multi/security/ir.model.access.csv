@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pos_scale_config_user,pos_scale_config_user,model_pos_scale_config,point_of_sale.group_pos_user,1,0,0,0
+access_pos_scale_params_user,pos_scale_params_user,model_pos_scale_config_params,point_of_sale.group_pos_user,1,0,0,0
+access_pos_scale_config_manager,pos_scale_config_manager,model_pos_scale_config,point_of_sale.group_pos_manager,1,1,1,1
+access_pos_scale_params_manager,pos_scale_params_manager,model_pos_scale_config_params,point_of_sale.group_pos_manager,1,1,1,1
