@@ -12,48 +12,38 @@ odoo.define("pos_scale_multi.pos_scale_multi", function(require){
 
 
 /* ********************************************************
-Overload: point_of_sale.PosModel
+ADD: point_of_sale.models
 
-- Load scale configuration and parameters
+- Load scale configuration and parameters models
 *********************************************************** */
-    var _initialize_ = models.PosModel.prototype.initialize;
-    models.PosModel.prototype.initialize = function(session, attributes){
-        self = this;
+    models.load_models({
+        model: 'pos.scale.config',
+        fields: [
+            'name',
+            'driver',
+            'params_ids',
+        ],
+        loaded: function(self, values){
+            self.db.add_scale_config(values);
+        },
+    });
 
-        var model = {
-            model: 'pos.scale.config',
-            fields: [
-                'name',
-                'driver',
-                'params_ids',
-            ],
-            loaded: function(self, values){
-                self.db.add_scale_config(values);
-            },
-        }
-        this.models.push(model);
-
-        model = {
-            model: 'pos.scale.config.params',
-            fields: [
-                'name',
-                'value',
-            ],
-            loaded: function(self, values){
-                self.db.add_scale_config_params(values);
-            },
-        }
-        this.models.push(model);
-
-        return _initialize_.call(this, session, attributes);
-
-    };
+    models.load_models({
+        model: 'pos.scale.config.params',
+        fields: [
+            'name',
+            'value',
+        ],
+        loaded: function(self, values){
+            self.db.add_scale_config_params(values);
+        },
+    });
 
 
 /* ********************************************************
 Extend: point_of_sale.PosDB
 
-- Store the new loaded data
+- Store new loaded models
 *********************************************************** */
     PosDB.include({
         init: function(options){
@@ -80,7 +70,7 @@ Extend: point_of_sale.PosDB
 /* ********************************************************
 Extend: point_of_sale.ProxyDevice
 
-- Add method to send scale configuration
+- Add method for scale configuration
 *********************************************************** */
     devices.ProxyDevice.include({
 
@@ -107,12 +97,12 @@ Extend: point_of_sale.PosModel
 
 - Call scale configuration method
 *********************************************************** */
-    var PosModelSuper = models.PosModel;
+    var _super_posmodel = models.PosModel.prototype;
     models.PosModel = models.PosModel.extend({
 
         connect_to_proxy: function(){
             var self = this;
-            var res = PosModelSuper.prototype.connect_to_proxy.call(this);
+            var res = _super_posmodel.connect_to_proxy.call(this);
 
             res = res.then(function(){
                 if(self.config.iface_scale_config && self.config.iface_electronic_scale){
@@ -124,6 +114,5 @@ Extend: point_of_sale.PosModel
         },
 
     });
-
 
 });
