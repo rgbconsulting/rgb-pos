@@ -21,32 +21,25 @@
 {
     'name': "POS Receipt Custom",
     'version': '1.0',
-    'depends': ['point_of_sale'],
+    'depends': ['pos_sequence_ref_number'],
     'license': 'AGPL-3',
     'author': "RGB Consulting SL",
     'website': "http://www.rgbconsulting.com",
     'category': 'POS',
-
     'summary': """Custom POS receipt""",
-
     'description': """
 Customizing the POS receipt
 ===========================
 * Add company/custom logo to the POS receipt.
-* Add customer information to the POS receipt (if exists)
+* Add simplified invoice information
 
 TODO
 ----
-* Customize the printing receipt (hw_escpos)
-
+* Customize XML Receipt (posbox)
     """,
 
     'data': [
         'views/logo.xml',
-    ],
-
-    'demo': [
-
     ],
 
     'qweb': [

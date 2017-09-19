@@ -7,7 +7,7 @@ Features
 --------
 
 * Enable/Disable company or custom logo.
-* Add client information (if exists).
+* Add simplified invoice information
 
 
 Credits

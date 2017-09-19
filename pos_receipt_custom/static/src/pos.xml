@@ -13,32 +13,47 @@
                         <img height="50" src="/web/binary/company_logo" />
                     </div>
                 </t>
-                <br />
+                <br/>
             </div>
         </t>
 
+        <!-- Add simplified invoice info -->
+        <t t-jquery="t[t-esc='order.get(\'sequence_ref\')']" t-operation="replace">
+            Simplified Invoice: <t t-esc="order.get('sequence_ref')"/>
+        </t>
+
+        <!-- Remove order ref -->
+        <t t-jquery="t[t-esc='order.get(\'name\')']" t-operation="replace"/>
+
         <!-- Add hr before company info -->
         <t t-jquery="t[t-esc='widget.pos.company.name']" t-operation="before">
-        <hr />
+            <hr/>
+        </t>
+
+        <!-- Add company vat -->
+        <t t-jquery="t[t-esc='widget.pos.company.name']" t-operation="after">
+            <t t-if="widget.pos.company.vat">
+                <br/>
+                VAT: <t t-esc='widget.pos.company.vat'/>
+            </t>
         </t>
 
         <!-- Add Customer info -->
         <t t-jquery="t[t-esc='widget.pos.shop.name']" t-operation="after">
             <t t-if="order.get_client()">
-                <br />
-                <hr />
+                <br/>
+                <hr/>
                 <t t-esc="order.get_client().name"/>
-                <br />
-                Address:
-                <t t-esc="order.get_client().street ? order.get_client().street + ',' : '' "/>
-                <t t-esc="order.get_client().city ? order.get_client().city + ',' : ''"/>
-                <t t-esc="order.get_client().state_id ? order.get_client().state_id[1] + ',' : ''"/>
-                <t t-esc="order.get_client().country_id ? order.get_client().country_id[1] : ''"/>
                 <br />
                 <t t-if="order.get_client().vat">
                     VAT: <t t-esc="order.get_client().vat"/>
+                    <br/>
                 </t>
-                <hr />
+                Address:
+                <t t-esc="order.get_client().street ? order.get_client().street : '' "/>
+                <t t-esc="order.get_client().city ? '- ' + order.get_client().city : ''"/>
+                <t t-esc="order.get_client().country_id ? '- ' + order.get_client().country_id[1] : ''"/>
+                <hr/>
             </t>
         </t>
     </t>
